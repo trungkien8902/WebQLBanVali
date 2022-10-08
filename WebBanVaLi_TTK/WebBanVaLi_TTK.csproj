@@ -139,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MetaData\tDanhMucSP.cs" />
     <Compile Include="Models\QLBanVaLi.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -240,6 +241,7 @@
     <Content Include="Views\Products\ProductsByCountry.cshtml" />
     <Content Include="Views\Products\ProductsDetail.cshtml" />
     <Content Include="Views\Products\CountryPartial.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

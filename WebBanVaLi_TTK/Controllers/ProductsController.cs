@@ -13,12 +13,10 @@ namespace WebBanVaLi_TTK.Controllers
     {
         // GET: Products
         QLBanVaLi_KienEntities db = new QLBanVaLi_KienEntities();
-        public ActionResult Index(int? page)
+        public ActionResult Index()
         {
             List<tDanhMucSP> lstProducts = db.tDanhMucSPs.ToList();
-            int pagesize = 8;//số sản phẩm trên một trang
-            int pagenumber = (page ?? 1);//số trang
-            return View(lstProducts.ToPagedList(pagenumber, pagesize));
+            return View(lstProducts.ToList());
         }
 
         public PartialViewResult CountryPartial()
@@ -49,6 +47,32 @@ namespace WebBanVaLi_TTK.Controllers
                 return null;
             }
             return View(sp);
+        }
+        [HttpGet]
+        public ActionResult Delete(string MaSP)
+        {
+            tDanhMucSP sanpham = db.tDanhMucSPs.SingleOrDefault(n => n.MaSP == MaSP);
+            if (sanpham == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sanpham);
+        }
+        [HttpPost, ActionName("Delete")]
+        public ActionResult XacNhanXoa(string MaSP)
+        {
+            tDanhMucSP sanpham = db.tDanhMucSPs.SingleOrDefault(n => n.MaSP == MaSP);
+            var anhsp = from p in db.tAnhSPs where p.MaSP == sanpham.MaSP select p;
+            if (sanpham == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            db.tAnhSPs.RemoveRange(anhsp);
+            db.tDanhMucSPs.Remove(sanpham);
+            db.SaveChanges();
+            return View("Index");
         }
     }
 }

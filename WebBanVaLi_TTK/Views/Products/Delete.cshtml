@@ -1,10 +1,10 @@
 ﻿@model WebBanVaLi_TTK.Models.tDanhMucSP
-
 @{
-    ViewBag.Title = "ProductsDetail";
+    ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <!-- Product Detail -->
     <section class="sec-product-detail bg0 p-t-65 p-b-60">
@@ -48,9 +48,14 @@
                             @Html.DisplayFor(model => model.Website)
                         </p>
                         <br />
-                        <p>
-                            @Html.ActionLink("Xóa sản phẩm này", "Delete", new { @MaSP = Model.MaSP })
-                        </p>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Xóa" class="btn btn-default" />
+                            </div>
+                        }
                         <!--  -->
                         <div class="flex-w flex-m p-l-100 p-t-40 respon7">
                             <div class="flex-m bor9 p-r-10 m-r-11">
@@ -106,6 +111,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+
         <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
             <span class="stext-107 cl6 p-lr-25">
                 SKU: JAK-01
@@ -116,6 +123,4 @@
             </span>
         </div>
     </section>
-
-
 </div>

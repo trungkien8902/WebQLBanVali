@@ -6,10 +6,10 @@
 @using WebBanVaLi_TTK.Models;
 @using PagedList.Mvc;
 @model PagedList.IPagedList<tDanhMucSP>
-@{int i = 0;
+@{
     foreach (var item in Model)
     {
-        i++;
+      
         <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
             <!-- Block2 -->
             <div class="block2">
@@ -42,21 +42,5 @@
             </div>
         </div>
         
-        if (i % 4 == 0)
-        {
-            <div style="clear:both"></div>
-        }
     }
 }
-
-<div style="display:block; width: 100%; padding: 0 20px">
-Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
-    <div style="padding-left: 100px;">
-    @{
-        if(@Model.PageCount > 1)
-        { 
-            @Html.PagedListPager(Model, page => Url.Action("ProductsByCountry", new { page = page, MaNuocSX = ViewBag.MaNuocSX }))
-        }
-    }
-    </div>
-</div>
