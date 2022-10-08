@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBanVaLi_KienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tAnhSP">
+    <Key>
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="TenFileAnh" />
+    </Key>
+    <Property Name="MaSP" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="TenFileAnh" Type="char" MaxLength="100" Nullable="false" />
+    <Property Name="ViTri" Type="smallint" />
+  </EntityType>
+  <EntityType Name="tChatLieu">
+    <Key>
+      <PropertyRef Name="MaChatLieu" />
+    </Key>
+    <Property Name="MaChatLieu" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="ChatLieu" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tDanhMucSP">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="150" />
+    <Property Name="MaChatLieu" Type="char" MaxLength="25" />
+    <Property Name="NganLapTop" Type="nvarchar" MaxLength="55" />
+    <Property Name="Model" Type="nvarchar" MaxLength="55" />
+    <Property Name="MauSac" Type="nvarchar" MaxLength="55" />
+    <Property Name="MaKichThuoc" Type="char" MaxLength="25" />
+    <Property Name="CanNang" Type="float" />
+    <Property Name="DoNoi" Type="float" />
+    <Property Name="MaHangSX" Type="char" MaxLength="25" />
+    <Property Name="MaNuocSX" Type="char" MaxLength="25" />
+    <Property Name="MaDacTinh" Type="char" MaxLength="25" />
+    <Property Name="Website" Type="char" MaxLength="155" />
+    <Property Name="ThoiGianBaoHanh" Type="float" />
+    <Property Name="GioiThieuSP" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gia" Type="float" />
+    <Property Name="ChietKhau" Type="float" />
+    <Property Name="MaLoai" Type="char" MaxLength="25" />
+    <Property Name="MaDT" Type="char" MaxLength="25" />
+    <Property Name="Anh" Type="char" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tHangSX">
+    <Key>
+      <PropertyRef Name="MaHangSX" />
+    </Key>
+    <Property Name="MaHangSX" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="HangSX" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaNuocThuongHieu" Type="char" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="tKichThuoc">
+    <Key>
+      <PropertyRef Name="MaKichThuoc" />
+    </Key>
+    <Property Name="MaKichThuoc" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="KichThuoc" Type="nchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tLoaiDT">
+    <Key>
+      <PropertyRef Name="MaDT" />
+    </Key>
+    <Property Name="MaDT" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="TenLoai" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tLoaiSP">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="Loai" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tQuocGia">
+    <Key>
+      <PropertyRef Name="MaNuoc" />
+    </Key>
+    <Property Name="MaNuoc" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="TenNuoc" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="QLBanVaLi_KienModelStoreContainer">
+    <EntitySet Name="tAnhSP" EntityType="Self.tAnhSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tChatLieu" EntityType="Self.tChatLieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tDanhMucSP" EntityType="Self.tDanhMucSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tHangSX" EntityType="Self.tHangSX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tKichThuoc" EntityType="Self.tKichThuoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tLoaiDT" EntityType="Self.tLoaiDT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tLoaiSP" EntityType="Self.tLoaiSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tQuocGia" EntityType="Self.tQuocGia" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

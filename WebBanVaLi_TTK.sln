@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBanVaLi_TTK", "WebBanVaLi_TTK\WebBanVaLi_TTK.csproj", "{01459339-3D02-4392-820D-089655471E1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01459339-3D02-4392-820D-089655471E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01459339-3D02-4392-820D-089655471E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01459339-3D02-4392-820D-089655471E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01459339-3D02-4392-820D-089655471E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F638F689-C993-4970-B855-5743F0D901C7}
+	EndGlobalSection
+EndGlobal
